@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Spring Boot with Thymeleaf</title>
+</head>
+<body>
+    <h1 th:text="'Hello ' + ${name} + '! This name was saved at: ' + ${timestamp}"></h1>
+
+    <table>
+        <thead>
+        <tr>
+            <td>Name</td>
+            <td>Time Added</td>
+            <td>Path</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="name: ${names}">
+            <td th:text="${name.getName()}"></td>
+            <td th:text="${name.getTimestamp()}"></td>
+            <td th:text="${name.getPath()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
